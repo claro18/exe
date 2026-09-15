@@ -3,17 +3,16 @@ name: Unzip File
 on:
   workflow_dispatch:
 
+# إعطاء صلاحيات الكتابة للبوت
+permissions:
+  contents: write
+
 jobs:
   unzip:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
-
-      - name: Check file existence
-        run: |
-          echo "=== Root Directory Content ==="
-          ls -la
 
       - name: Unzip file
         run: |
